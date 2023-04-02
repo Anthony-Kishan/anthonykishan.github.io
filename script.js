@@ -9,8 +9,10 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
+const allbuttons = document.getElementById("buttons");
 const sliders = document.querySelectorAll(".slider");
-const buttons = document.querySelectorAll("button");
+// const buttons = document.querySelectorAll("button");
+const buttons = allbuttons.querySelectorAll("button");
 
 // set the first slide as active by default
 sliders[0].classList.add("active");
@@ -24,7 +26,7 @@ buttons.forEach((button, index) => {
     buttons.forEach((button) => button.classList.remove("active"));
 
     // add active class to the selected slide and button
-    sliders[index-1].classList.add("active");
+    sliders[index].classList.add("active");
     button.classList.add("active");
   });
 });
@@ -39,10 +41,6 @@ document.querySelectorAll('.grid-wrapper img').forEach(image =>{
 document.querySelector('.popup-image span').onclick = () =>{
   document.querySelector('.popup-image').style.display = "none";
 }
-
-
-
-
 
 const position = document.documentElement;
 position.addEventListener("mousemove", e => {
